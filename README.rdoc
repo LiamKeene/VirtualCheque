@@ -1,28 +1,19 @@
-== README
+= Virtual Bank Cheques Demo App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<i>demo app to print virtual bank cheques</i>
 
-Things you may want to cover:
+The application takes the recipient's name, date and a nominal value, and 
+generates a virtual cheque (on screen) with the proper string representation 
+of the value.
 
-* Ruby version
+For example, when 1,303.48 is entered it is represented by 'One Thousand 
+Three Hundred and Three dollars and Forty-Eight cents'.
 
-* System dependencies
+== User Stories
+1.1 Creating a new cheque requires the operator to enter a value, a payment date and a recipient name. Entering valid details will trigger the application to (a) save the cheque generated and (b) display the generated cheque, as per 1.4.
 
-* Configuration
+1.2 List of all cheques saved is available and shows a the date, recipient name and value as well as a link to view.
 
-* Database creation
+1.3 Filtering the list is possible by clicking on a recipient name, which results in showing the list of cheque as 1.2, but for a selected recipient only.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1.4 Viewing a cheque allows for the operator to view the cheque as saved and generated out the system, including (but not limited to!) the numeric to string representation conversion.
