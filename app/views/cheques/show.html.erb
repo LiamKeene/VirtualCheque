@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @cheque.value %>
+</p>
+
+<p>
+  <strong>Payment date:</strong>
+  <%= @cheque.payment_date %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @cheque.recipient %>
+</p>
+
+<%= link_to 'Edit', edit_cheque_path(@cheque) %> |
+<%= link_to 'Back', cheques_path %>

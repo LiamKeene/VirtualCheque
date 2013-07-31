@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value: 9.99
+  payment_date: 2013-07-31
+  recipient: MyString
+
+two:
+  value: 9.99
+  payment_date: 2013-07-31
+  recipient: MyString
