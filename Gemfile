@@ -13,6 +13,8 @@ gem 'jquery-rails', '2.2.1'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.2'
 
+gem 'linguistics', '2.0.2'
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
