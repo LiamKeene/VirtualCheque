@@ -22,8 +22,8 @@
   <tbody>
     <% @cheques.each do |cheque| %>
       <tr>
-        <td><%= cheque.value %></td>
-        <td><%= cheque.payment_date %></td>
+        <td>$<%= number_with_precision(cheque.value, :precision => 2) %></td>
+        <td><%= cheque.payment_date.strftime('%d/%m/%Y') %></td>
         <td><%= link_to cheque.recipient, cheques_path(:recipient => cheque.recipient) %></td>
         <td><%= link_to 'Show', cheque %></td>
         <td><%= link_to 'Edit', edit_cheque_path(cheque) %></td>
