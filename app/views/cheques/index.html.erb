@@ -1,4 +1,11 @@
-<h1>Listing cheques</h1>
+<h1>Listing cheques
+  <% if @filtered %>
+   (for <%= @recipient %>)
+</h1>
+<%= link_to '(clear filter)', cheques_path %>
+  <% else %>
+</h1>
+  <% end %>
 
 <table>
   <thead>
@@ -17,7 +24,7 @@
       <tr>
         <td><%= cheque.value %></td>
         <td><%= cheque.payment_date %></td>
-        <td><%= cheque.recipient %></td>
+        <td><%= link_to cheque.recipient, cheques_path(:recipient => cheque.recipient) %></td>
         <td><%= link_to 'Show', cheque %></td>
         <td><%= link_to 'Edit', edit_cheque_path(cheque) %></td>
         <td><%= link_to 'Destroy', cheque, method: :delete, data: { confirm: 'Are you sure?' } %></td>
