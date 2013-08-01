@@ -8,18 +8,17 @@
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-        <%= link_to 'Bank of Liamkun', '', id: 'logo' %>
-        <nav>
-          <ul class="nav pull-right">
-            <li><%= link_to 'Home', '' %></li>
-            <li><%= link_to 'Cheques', cheques_path %></li>
-          </ul>
-        </nav>
+<body class="container">
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <%= link_to 'Bank of Liamkun', '/', class: 'brand', id: 'logo' %>
+        <ul class="nav pull-right">
+          <li><%= link_to 'Home', '/' %></li>
+          <li><%= link_to 'Cheques', cheques_path %></li>
+        </ul>
       </div>
     </div>
   </header>
