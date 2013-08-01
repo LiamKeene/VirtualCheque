@@ -4,7 +4,12 @@ class ChequesController < ApplicationController
   # GET /cheques
   # GET /cheques.json
   def index
-    @cheques = Cheque.all
+    # Filter cheques by recipient
+    if params.has_key?(:recipient)
+      @cheques = Cheque.where('recipient = ?', params[:recipient])
+    else
+     @cheques = Cheque.all
+    end
   end
 
   # GET /cheques/1
