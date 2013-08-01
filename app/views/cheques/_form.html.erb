@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :value %><br>
-    <%= f.text_field :value %>
-  </div>
-  <div class="field">
     <%= f.label :payment_date %><br>
     <%= f.date_select :payment_date %>
   </div>
   <div class="field">
     <%= f.label :recipient %><br>
     <%= f.text_field :recipient %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
   </div>
   <div class="actions">
     <%= f.submit %>
