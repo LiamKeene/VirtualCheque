@@ -7,6 +7,8 @@ class ChequesController < ApplicationController
     # Filter cheques by recipient
     if params.has_key?(:recipient)
       @cheques = Cheque.where('recipient = ?', params[:recipient])
+      @filtered = true
+      @recipient = params[:recipient]
     else
      @cheques = Cheque.all
     end
