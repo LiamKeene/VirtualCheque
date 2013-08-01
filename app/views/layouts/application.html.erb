@@ -10,8 +10,21 @@
   <![endif]-->
 </head>
 <body>
-
-<%= yield %>
-
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to 'Bank of Liamkun', '', id: 'logo' %>
+        <nav>
+          <ul class="nav pull-right">
+            <li><%= link_to 'Home', '' %></li>
+            <li><%= link_to 'Cheques', cheques_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section id="main" class="container">
+    <%= yield %>
+  </section>
 </body>
 </html>
