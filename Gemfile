@@ -13,6 +13,7 @@ gem 'jquery-rails', '2.2.1'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.2'
 
+gem 'faker', '1.2.0'
 gem 'linguistics', '2.0.2'
 
 group :doc do
