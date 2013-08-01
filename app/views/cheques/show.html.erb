@@ -1,19 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Value:</strong>
-  $<%= number_with_precision(@cheque.value, :precision => 2) %>
-</p>
+<div id="cheque">
+  <div id="bank-logo"></div>
+  <p id="cheque-id"><%= @cheque.id.to_s.rjust(7, '0') %></p>
+  <p id="cheque-date">DATE <%= @cheque.payment_date.to_time.strftime('%d/%m/%Y') %></p>
+  <p id="cheque-recipient">PAY <%= @cheque.recipient %> to the amount of</p>
+  <p id="cheque-value-words"><%= @cheque.value_to_words %></p>
+  <p id="cheque-value">$<%= @cheque.value %></p>
+  <p id="signature"></p>
+</div>
 
-<p>
-  <strong>Payment date:</strong>
-  <%= @cheque.payment_date.strftime('%d/%m/%Y') %>
-</p>
-
-<p>
-  <strong>Recipient:</strong>
-  <%= @cheque.recipient %>
-</p>
-
-<%= link_to 'Edit', edit_cheque_path(@cheque) %> |
-<%= link_to 'Back', cheques_path %>
+<div id="actions">
+  <%= link_to 'Edit', edit_cheque_path(@cheque) %> |
+  <%= link_to 'Back', cheques_path %>
+</div>
