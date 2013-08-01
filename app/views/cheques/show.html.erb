@@ -2,12 +2,12 @@
 
 <p>
   <strong>Value:</strong>
-  <%= @cheque.value %>
+  $<%= number_with_precision(@cheque.value, :precision => 2) %>
 </p>
 
 <p>
   <strong>Payment date:</strong>
-  <%= @cheque.payment_date %>
+  <%= @cheque.payment_date.strftime('%d/%m/%Y') %>
 </p>
 
 <p>
