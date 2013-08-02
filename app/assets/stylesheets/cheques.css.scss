@@ -1,10 +1,14 @@
 // Place all the styles related to the Cheques controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// Hack to ensure that this field is as wide as fields with 'input-append'
+
+/* Cheque Form */
+/* Hack to ensure that this field is as wide as fields with 'input-append' */
 #recipient-field {
   width: 234px;
 }
+
+/* Cheque Index */
 /* Tighten up the show/edit/delete icons */
 #cheque-actions {
   margin: 0;
@@ -19,4 +23,21 @@
       overflow: hidden;
     }
   }
+}
+
+/* Cheque Show */
+#cheque {
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 5px #222;
+  font-size: 1.25em;
+  margin: 0 auto;
+  padding-bottom: 2em;
+
+  .row {
+    margin: 0 0 1em 0;
+  }
+}
+
+#actions {
+  clear: both;
 }
