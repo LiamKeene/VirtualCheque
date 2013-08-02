@@ -66,6 +66,17 @@
     letter-spacing: 0.2em;
     line-height: 2em;
   }
+  
+  .underlined {
+    border-bottom: 1px solid #222;
+  }
+
+  #cheque-value {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 1.5em;
+    line-height: 1.75em;
+  }
 }
 
 #actions {

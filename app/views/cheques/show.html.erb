@@ -10,16 +10,22 @@
   <div id="cheque-inner">
     <div class="row">
       <div class="span2 offset6" id="cheque-date">DATE
-        <span><%= @cheque.payment_date.to_time.strftime('%d/%m/%Y') %></span>
+        <span class="underlined">
+          <%= @cheque.payment_date.to_time.strftime('%d/%m/%Y') %>
+        </span>
       </div>
     </div>
     <div class="row">
       <div class="span1">PAY</div>
-      <div class="span5" id="cheque-recipient"><%= @cheque.recipient %></div>
+      <div class="span5 underlined" id="cheque-recipient">
+        <%= @cheque.recipient %>
+      </div>
       <div class="span2">to the amount of</div>
     </div>
     <div class="row">
-      <div class="span6" id="cheque-value-words"><%= @cheque.value_to_words %></div>
+      <div class="span6 underlined" id="cheque-value-words">
+        <%= @cheque.value_to_words %>
+      </div>
     </div>
     <div class="row">
       <div class="span2 offset6" id="cheque-value">$<%= @cheque.value %></div>
