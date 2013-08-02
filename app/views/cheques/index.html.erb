@@ -21,7 +21,7 @@
   <tbody>
     <% @cheques.each do |cheque| %>
       <tr>
-        <td><%= cheque.id.to_s.rjust(7, '0') %></td>
+        <td><%= link_to cheque.id.to_s.rjust(7, '0'), cheque %></td>
         <td><%= cheque.payment_date.strftime('%d/%m/%Y') %></td>
         <td><%= link_to cheque.recipient, cheques_path(recipient: cheque.recipient) %></td>
         <td>$<%= number_with_precision(cheque.value, precision: 2) %></td>
