@@ -3,7 +3,9 @@
 <div class="span9" id="cheque">
   <div class="row" id="header-row">
     <div class="span3" id="bank-brand"><h2>LiamBank</h2></div>
-    <div class="span2 offset3" id="bank-logo">リアム銀行</div>
+    <div class="span4 offset1" id="bank-logo">
+      <%= image_tag 'LiamBank.png', alt: 'リアム銀行' %>
+    </div>
   </div>
   <div id="cheque-inner">
     <div class="row">
@@ -25,7 +27,7 @@
     <p id="signature"></p>
   </div>
   <!-- Some random 'Bank ID numbers' before the Cheque ID -->
-  <div class="row">
+  <div class="row" id="footer-row">
     <div class="span3 offset5" id="cheque-id">
       00923 1234 <%= @cheque.id.to_s.rjust(7, '0') %>
     </div>

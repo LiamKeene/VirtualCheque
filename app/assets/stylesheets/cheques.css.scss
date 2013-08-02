@@ -33,8 +33,32 @@
   margin: 0 auto;
   padding-bottom: 2em;
 
+  #header-row, #footer-row {
+    margin: 0;
+  }
+
   .row {
     margin: 0 0 1em 0;
+  }
+
+  #cheque-inner {
+    background-image: url('embossed_paper_@2X.png');
+    clear: both;
+    padding: 1em;
+  }
+
+  #bank-logo {
+    float: right;
+    line-height: 60px;
+    margin-right: 1em;
+    text-align: right;
+
+    span {
+      /* Hide the text. */
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
   }
 }
 
