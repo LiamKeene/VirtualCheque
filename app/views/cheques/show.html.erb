@@ -23,12 +23,13 @@
       <div class="span2">to the amount of</div>
     </div>
     <div class="row">
-      <div class="span6 underlined" id="cheque-value-words">
-        <%= @cheque.value_to_words %>
+      <div class="span6" id="cheque-value-words">
+        <!-- This should probably happen in the controller or model
+          Also the gsub is necessary otherwise (for some reason) I can't
+          split on '\n' -->
+        <%= word_wrap(@cheque.value_to_words, line_width: 50).gsub(/\n/, '<br />').split('<br />').map{ |line| "<p class=\"underlined\">#{line}</p>" }.join.html_safe %>
       </div>
-    </div>
-    <div class="row">
-      <div class="span2 offset6" id="cheque-value">$<%= @cheque.value %></div>
+      <div class="span2" id="cheque-value">$<%= @cheque.value %></div>
     </div>
     <p id="signature"></p>
   </div>
