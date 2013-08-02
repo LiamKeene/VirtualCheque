@@ -1,1 +1,11 @@
 @import "bootstrap";
+
+body {
+  font-family: Oxygen, sans-serif !important;
+  padding-top: 4em;
+}
+
+#logo {
+  background: url('LiamBank.png') no-repeat;
+  padding-right: 0.5em;
+}
