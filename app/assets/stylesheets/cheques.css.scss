@@ -5,3 +5,18 @@
 #recipient-field {
   width: 234px;
 }
+/* Tighten up the show/edit/delete icons */
+#cheque-actions {
+  margin: 0;
+
+  a.btn {
+    padding: 2px 8px;
+
+    span {
+      /* Hide the text. */
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
