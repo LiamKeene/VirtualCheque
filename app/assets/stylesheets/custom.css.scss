@@ -9,3 +9,24 @@ body {
   background: url('LiamBank.png') no-repeat;
   padding-right: 0.5em;
 }
+
+.box {
+  background-color:  #ddd;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  box-shadow: 0.5em 0.5em 0.5em #666;
+  margin: 1em;
+  padding: 1em;
+  width: 35em;
+
+  h2 {
+    color: #353533;
+    font-size: 1.25em;
+    margin: 0;
+  }
+  p {
+    color: #666;
+    font-size: 1em;
+    margin-left: 1em;
+  }
+}
