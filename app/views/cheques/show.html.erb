@@ -1,13 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<div id="cheque">
-  <div id="bank-logo"></div>
-  <p id="cheque-id"><%= @cheque.id.to_s.rjust(7, '0') %></p>
-  <p id="cheque-date">DATE <%= @cheque.payment_date.to_time.strftime('%d/%m/%Y') %></p>
-  <p id="cheque-recipient">PAY <%= @cheque.recipient %> to the amount of</p>
-  <p id="cheque-value-words"><%= @cheque.value_to_words %></p>
-  <p id="cheque-value">$<%= @cheque.value %></p>
-  <p id="signature"></p>
+<div class="span9" id="cheque">
+  <div class="row" id="header-row">
+    <div class="span3" id="bank-brand"><h2>LiamBank</h2></div>
+    <div class="span4 offset1" id="bank-logo">
+      <%= image_tag 'LiamBank.png', alt: 'リアム銀行' %>
+    </div>
+  </div>
+  <div id="cheque-inner">
+    <div class="row">
+      <div class="span2 offset6" id="cheque-date">DATE
+        <span class="underlined">
+          <%= @cheque.payment_date.to_time.strftime('%d/%m/%Y') %>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span1">PAY</div>
+      <div class="span5 underlined" id="cheque-recipient">
+        <%= @cheque.recipient %>
+      </div>
+      <div class="span2">to the amount of</div>
+    </div>
+    <div class="row">
+      <div class="span6" id="cheque-value-words">
+        <!-- This should probably happen in the controller or model
+          Also the gsub is necessary otherwise (for some reason) I can't
+          split on '\n' -->
+        <%= word_wrap(@cheque.value_to_words, line_width: 50).gsub(/\n/, '<br />').split('<br />').map{ |line| "<p class=\"underlined\">#{line}</p>" }.join.html_safe %>
+      </div>
+      <div class="span2" id="cheque-value">$<%= @cheque.value %></div>
+    </div>
+    <p id="signature"></p>
+  </div>
+  <!-- Some random 'Bank ID numbers' before the Cheque ID -->
+  <div class="row" id="footer-row">
+    <div class="span3 offset5" id="cheque-id">
+      00923 1234 <%= @cheque.id.to_s.rjust(7, '0') %>
+    </div>
+  </div>
 </div>
 
 <div id="actions">

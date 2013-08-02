@@ -1,3 +1,91 @@
 // Place all the styles related to the Cheques controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Cheque Form */
+/* Hack to ensure that this field is as wide as fields with 'input-append' */
+#recipient-field {
+  width: 234px;
+}
+
+/* Cheque Index */
+/* Tighten up the show/edit/delete icons */
+#cheque-actions {
+  margin: 0;
+
+  a.btn {
+    padding: 2px 8px;
+
+    span {
+      /* Hide the text. */
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}
+
+/* Cheque Show */
+#cheque {
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 5px #222;
+  font-size: 1.25em;
+  margin: 0 auto 2em;
+
+  #header-row, #footer-row {
+    margin: 0;
+  }
+
+  .row {
+    margin: 0 0 1em 0;
+  }
+
+  #cheque-inner {
+    background-image: url('embossed_paper_@2X.png');
+    clear: both;
+    padding: 1em;
+  }
+
+  #bank-logo {
+    float: right;
+    line-height: 60px;
+    margin-right: 1em;
+    text-align: right;
+
+    span {
+      /* Hide the text. */
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  #cheque-id {
+    font-family: Iceland, monospace;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    line-height: 2em;
+  }
+  
+  .underlined {
+    border-bottom: 1px solid #222;
+  }
+
+  #cheque-value {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 1.5em;
+    line-height: 1.75em;
+  }
+
+  #cheque-value-words {
+    p {
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+#actions {
+  clear: both;
+}
