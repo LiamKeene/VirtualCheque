@@ -10,7 +10,8 @@
 <table class="table table-condensed table-hover table-striped">
   <thead>
     <tr>
-      <th>Payment date</th>
+      <th>Cheque Number</th>
+      <th>Payment Date</th>
       <th>Recipient</th>
       <th>Value</th>
       <th></th>
@@ -20,6 +21,7 @@
   <tbody>
     <% @cheques.each do |cheque| %>
       <tr>
+        <td><%= cheque.id.to_s.rjust(7, '0') %></td>
         <td><%= cheque.payment_date.strftime('%d/%m/%Y') %></td>
         <td><%= link_to cheque.recipient, cheques_path(recipient: cheque.recipient) %></td>
         <td>$<%= number_with_precision(cheque.value, precision: 2) %></td>
