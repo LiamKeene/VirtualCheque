@@ -10,6 +10,15 @@ body {
   padding-right: 0.5em;
 }
 
+a {
+  color: #333;
+
+  &:hover, &:focus {
+    color: #8a9f46;
+    text-decoration: none;
+  }
+}
+
 .box {
   background-color:  #ddd;
   -moz-border-radius: 1em;
