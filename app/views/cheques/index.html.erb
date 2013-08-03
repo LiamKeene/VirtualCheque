@@ -47,6 +47,7 @@
       <td><%= @cheques.length %></td>
       <td>Total Value</td>
       <td>$ <%= number_with_precision(@cheques.map(&:value).inject(:+), precision: 2) %></td>
+      <td></td>
     </tr>
   </tfoot>
 </table>
