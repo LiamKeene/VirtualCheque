@@ -4,6 +4,9 @@ body {
   font-family: Oxygen, sans-serif !important;
 }
 
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.1em; }
+
 header {
   background-image: linear-gradient(to bottom, #fff, #dad0f5);
   border-top: 0.25em solid #160347;
@@ -50,6 +53,28 @@ header {
       padding-right: 0.5em;  
     }
   }
+}
+
+#content {
+  margin: 0 auto;
+  padding: 0.5em;
+  width: 19em;
+}
+
+#index {
+  h1, h2 {
+    text-align: center;
+  }
+}
+
+#about {
+  p {
+    font-size: 0.85em;
+  }
+}
+
+#about-large { 
+  display: none;
 }
 
 tfoot {

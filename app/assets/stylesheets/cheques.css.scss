@@ -7,6 +7,11 @@
 #recipient-field {
   width: 234px;
 }
+/* Hack to left align the datepicker input (don't know why this 
+  style is in the original CSS) */
+div.datepicker {
+  padding: 0;
+}
 
 /* Cheque Index */
 /* Tighten up the show/edit/delete icons */
