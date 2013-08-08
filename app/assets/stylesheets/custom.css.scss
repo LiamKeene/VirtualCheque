@@ -5,9 +5,18 @@ body {
   padding-top: 4em;
 }
 
-#logo {
-  background: url('LiamBank.png') no-repeat;
-  padding-right: 0.5em;
+#branding {
+  a {
+    color: #8a9f46;
+
+    &:hover, &:focus {
+      font-weight: bold;
+    }
+  }
+  img {
+    display: none;
+    padding-right: 0.5em;  
+  }
 }
 
 a {

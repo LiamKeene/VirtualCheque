@@ -15,13 +15,12 @@
     <div class="navbar">
       <div class="navbar-inner">
         <ul class="nav">
-          <li><%= link_to 'Home', '/' %></li>
           <li><%= link_to 'Cheques', cheques_path %></li>
-          <li><%= link_to 'New Cheque', new_cheque_path %></li>
+          <li><%= link_to 'New', new_cheque_path %></li>
         </ul>
-        <div class="pull-right">
-          <%= link_to 'LiamBank', '/', class: 'brand' %>
-          <%= image_tag 'LiamBank.png', alt: 'リアム銀行', id: 'logo' %>
+        <div id="branding" class="pull-right">
+          <%= link_to 'LiamBank', root_url, class: 'brand' %>
+          <%= image_tag 'LiamBank.png', alt: 'リアム銀行' %>
         </div>
       </div>
     </div>
