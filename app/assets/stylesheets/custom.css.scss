@@ -2,29 +2,53 @@
 
 body {
   font-family: Oxygen, sans-serif !important;
-  padding-top: 4em;
 }
 
-#branding {
-  a {
-    color: #8a9f46;
+header {
+  background-image: linear-gradient(to bottom, #fff, #dad0f5);
+  border-top: 0.25em solid #160347;
+  border-bottom: 0.1em solid #dad0f5;
 
-    &:hover, &:focus {
-      font-weight: bold;
+  a {
+    text-decoration: none;
+    
+    &:hover, &:focus {    
+      color: #dad0f5;
+      text-decoration: none;
     }
   }
-  img {
-    display: none;
-    padding-right: 0.5em;  
+
+  nav {
+    float: left;
+
+    a {
+      color: #37295c;
+      display: inline-block;
+      padding: 0.5em;
+
+      &:hover, &:focus {
+        background-color: #a282f5;
+        color: #dad0f5;
+      }
+    }
   }
-}
 
-a {
-  color: #333;
+  #branding {
+    background-color: #361390;
+    float: right;
+    padding: 0.5em;
 
-  &:hover, &:focus {
-    color: #8a9f46;
-    text-decoration: none;
+    a {
+      color: #a282f5;
+
+      &:hover, &:focus {
+        font-weight: bold;
+      }
+    }
+    img {
+      display: none;
+      padding-right: 0.5em;  
+    }
   }
 }
 
@@ -53,4 +77,14 @@ tfoot {
     font-size: 1em;
     margin-left: 1em;
   }
+}
+
+/* Clearfix - don't care about IE6/7 */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
 }
