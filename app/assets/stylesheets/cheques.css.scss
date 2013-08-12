@@ -14,6 +14,47 @@ div.datepicker {
 }
 
 /* Cheque Index */
+#cheques-table {
+  /* Table is no longer a table! 
+   * http://css-tricks.com/responsive-data-tables/ 
+   */
+  table, thead, tbody, tfoot, th, td, tr { 
+    display: block; 
+  }
+  thead {
+    /* Hide the headers */
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr { 
+    border: 0.0625em solid #ccc; 
+  }  
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 0.0625em solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+  }
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0.375em;
+    left: 0.375em;
+    width: 45%; 
+    padding-right: 0.625em; 
+    white-space: nowrap;
+  }
+  /* Label the data */
+  td:nth-of-type(1):before { content: "#"; }
+  td:nth-of-type(2):before { content: "Date"; }
+  td:nth-of-type(3):before { content: "Recipient"; }
+  td:nth-of-type(4):before { content: "Value"; }
+  td:nth-of-type(5):before { content: "Actions"; }
+}
+
 /* Tighten up the show/edit/delete icons */
 #cheque-actions {
   margin: 0;
