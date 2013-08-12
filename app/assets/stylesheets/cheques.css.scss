@@ -56,6 +56,25 @@ div.datepicker {
     td:nth-of-type(4):before { content: "Value"; }
     td:nth-of-type(5):before { content: "Actions"; }
   }
+
+  tfoot {
+    td:nth-of-type(1), td:nth-of-type(3), td:nth-of-type(5) {
+      display: none;
+    }
+    td:nth-of-type(2), td:nth-of-type(4) {
+      display: table-cell;
+    }
+    td:nth-of-type(2) {
+      padding-left: 0.5em;
+      &:after {
+        content: " Cheques with a value of";
+        font-weight: normal;
+      }
+    }
+    td:nth-of-type(4) {
+      padding-left: 0.5em;
+    }
+  }
 }
 
 /* Tighten up the show/edit/delete icons */
