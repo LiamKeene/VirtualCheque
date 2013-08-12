@@ -51,6 +51,7 @@ div.datepicker {
     top: 0.428571428571em;
     left: 0.428571428571em;
     width: 45%; 
+    font-weight: bold;
     padding-right: 0.714285714286em; 
     white-space: nowrap;
     z-index: 1;
@@ -63,7 +64,17 @@ div.datepicker {
       display: table-cell;
       width: 25%;
     }
-    td:nth-of-type(5) { padding-top: 0; }
+    td:nth-of-type(2), td:nth-of-type(5) {
+      padding-left: 15%;
+      padding-right: 0.428571428571em;
+      text-align: right;
+    }
+    td:nth-of-type(5) { 
+      padding-top: 0;
+    }
+    td:nth-of-type(2):before, td:nth-of-type(5):before {
+      text-align: left;
+    }
     /* Label the data */
     td:nth-of-type(1):before { content: "#"; }
     td:nth-of-type(2):before { content: "Date"; }
