@@ -37,6 +37,12 @@ div.datepicker {
     border-bottom: 0.0714285714286em solid #eee; 
     position: relative;
     padding: 0.428571428571em 0 0 25%;
+
+    a {
+      position: relative;
+      /* Must be higher than the z-index of td:before */
+      z-index: 2
+    }
   }
   td:before { 
     /* Now like a table header */
@@ -47,6 +53,7 @@ div.datepicker {
     width: 45%; 
     padding-right: 0.714285714286em; 
     white-space: nowrap;
+    z-index: 1;
   }
 
   tbody {
