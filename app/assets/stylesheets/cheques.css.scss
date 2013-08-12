@@ -15,6 +15,7 @@ div.datepicker {
 
 /* Cheque Index */
 #cheques-table {
+  font-size: 0.875em;
   /* Table is no longer a table! 
    * http://css-tricks.com/responsive-data-tables/ 
    */
@@ -28,27 +29,34 @@ div.datepicker {
     left: -9999px;
   }
   tr { 
-    border: 0.0625em solid #ccc; 
+    border: 0.0714285714286em solid #ccc; 
   }  
   td { 
     /* Behave  like a "row" */
     border: none;
-    border-bottom: 0.0625em solid #eee; 
+    border-bottom: 0.0714285714286em solid #eee; 
     position: relative;
-    padding-left: 50%; 
+    padding: 0.428571428571em 0 0 25%;
   }
   td:before { 
     /* Now like a table header */
     position: absolute;
     /* Top/left values mimic padding */
-    top: 0.375em;
-    left: 0.375em;
+    top: 0.428571428571em;
+    left: 0.428571428571em;
     width: 45%; 
-    padding-right: 0.625em; 
+    padding-right: 0.714285714286em; 
     white-space: nowrap;
   }
 
   tbody {
+    /* Create a custom grid */
+    td:nth-of-type(1), td:nth-of-type(2),
+    td:nth-of-type(4), td:nth-of-type(5) {
+      display: table-cell;
+      width: 25%;
+    }
+    td:nth-of-type(5) { padding-top: 0; }
     /* Label the data */
     td:nth-of-type(1):before { content: "#"; }
     td:nth-of-type(2):before { content: "Date"; }
