@@ -61,6 +61,10 @@ header {
   margin: 0 auto;
   padding: 0.375em;
   width: 19.25em;
+
+  @media screen and (min-width: 37.5625em) {
+    width: 36.75em;
+  }
 }
 
 #index {
