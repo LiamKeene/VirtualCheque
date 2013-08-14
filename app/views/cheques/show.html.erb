@@ -3,29 +3,38 @@
 <div class="span9" id="cheque">
   <div class="row" id="header-row">
     <div class="span3" id="bank-brand"><h2>LiamBank</h2></div>
-    <div class="span2 offset3" id="bank-logo">リアム銀行</div>
+    <div class="span4 offset1" id="bank-logo">
+      <%= image_tag 'LiamBank.png', alt: 'リアム銀行' %>
+    </div>
   </div>
   <div id="cheque-inner">
     <div class="row">
       <div class="span2 offset6" id="cheque-date">DATE
-        <span><%= @cheque.payment_date.to_time.strftime('%d/%m/%Y') %></span>
+        <span class="underlined">
+          <%= @cheque.payment_date.to_time.strftime('%d/%m/%Y') %>
+        </span>
       </div>
     </div>
     <div class="row">
       <div class="span1">PAY</div>
-      <div class="span5" id="cheque-recipient"><%= @cheque.recipient %></div>
+      <div class="span5 underlined" id="cheque-recipient">
+        <%= @cheque.recipient %>
+      </div>
       <div class="span2">to the amount of</div>
     </div>
     <div class="row">
-      <div class="span6" id="cheque-value-words"><%= @cheque.value_to_words %></div>
-    </div>
-    <div class="row">
-      <div class="span2 offset6" id="cheque-value">$<%= @cheque.value %></div>
+      <div class="span6" id="cheque-value-words">
+        <!-- This should probably happen in the controller or model
+          Also the gsub is necessary otherwise (for some reason) I can't
+          split on '\n' -->
+        <%= word_wrap(@cheque.value_to_words, line_width: 50).gsub(/\n/, '<br />').split('<br />').map{ |line| "<p class=\"underlined\">#{line}</p>" }.join.html_safe %>
+      </div>
+      <div class="span2" id="cheque-value">$<%= @cheque.value %></div>
     </div>
     <p id="signature"></p>
   </div>
   <!-- Some random 'Bank ID numbers' before the Cheque ID -->
-  <div class="row">
+  <div class="row" id="footer-row">
     <div class="span3 offset5" id="cheque-id">
       00923 1234 <%= @cheque.id.to_s.rjust(7, '0') %>
     </div>

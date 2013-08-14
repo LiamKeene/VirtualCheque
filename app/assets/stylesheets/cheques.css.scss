@@ -7,14 +7,108 @@
 #recipient-field {
   width: 234px;
 }
+/* Hack to left align the datepicker input (don't know why this 
+  style is in the original CSS) */
+div.datepicker {
+  padding: 0;
+}
 
 /* Cheque Index */
+#cheques-table {
+  font-size: 0.875em;
+  /* Table is no longer a table! 
+   * http://css-tricks.com/responsive-data-tables/ 
+   */
+  table, thead, tbody, tfoot, th, td, tr { 
+    display: block; 
+  }
+  thead {
+    /* Hide the headers */
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr { 
+    border: 0.0714285714286em solid #ccc; 
+  }  
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 0.0714285714286em solid #eee; 
+    position: relative;
+    padding: 0.428571428571em 0 0 25%;
+
+    a {
+      position: relative;
+      /* Must be higher than the z-index of td:before */
+      z-index: 2
+    }
+  }
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0.428571428571em;
+    left: 0.428571428571em;
+    width: 45%; 
+    font-weight: bold;
+    padding-right: 0.714285714286em; 
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  tbody {
+    /* Create a custom grid */
+    td:nth-of-type(1), td:nth-of-type(2),
+    td:nth-of-type(4), td:nth-of-type(5) {
+      display: table-cell;
+      width: 25%;
+    }
+    td:nth-of-type(2), td:nth-of-type(5) {
+      padding-left: 15%;
+      padding-right: 0.428571428571em;
+      text-align: right;
+    }
+    td:nth-of-type(5) { 
+      padding-top: 0;
+    }
+    td:nth-of-type(2):before, td:nth-of-type(5):before {
+      text-align: left;
+    }
+    /* Label the data */
+    td:nth-of-type(1):before { content: "#"; }
+    td:nth-of-type(2):before { content: "Date"; }
+    td:nth-of-type(3):before { content: "Recipient"; }
+    td:nth-of-type(4):before { content: "Value"; }
+    td:nth-of-type(5):before { content: "Actions"; }
+  }
+
+  tfoot {
+    td:nth-of-type(1), td:nth-of-type(3), td:nth-of-type(5) {
+      display: none;
+    }
+    td:nth-of-type(2), td:nth-of-type(4) {
+      display: table-cell;
+    }
+    td:nth-of-type(2) {
+      padding-left: 0.5em;
+      &:after {
+        content: " Cheques with a value of";
+        font-weight: normal;
+      }
+    }
+    td:nth-of-type(4) {
+      padding-left: 0.5em;
+    }
+  }
+}
+
 /* Tighten up the show/edit/delete icons */
 #cheque-actions {
   margin: 0;
 
   a.btn {
-    padding: 2px 8px;
+    padding: 0.125em 0.5em;
 
     span {
       /* Hide the text. */
@@ -30,11 +124,59 @@
   border: 1px solid #ccc;
   box-shadow: 5px 5px 5px #222;
   font-size: 1.25em;
-  margin: 0 auto;
-  padding-bottom: 2em;
+  margin: 0 auto 2em;
+
+  #header-row, #footer-row {
+    margin: 0;
+  }
 
   .row {
     margin: 0 0 1em 0;
+  }
+
+  #cheque-inner {
+    background-image: asset-url('embossed_paper_@2X.png');
+    clear: both;
+    padding: 1em;
+  }
+
+  #bank-logo {
+    float: right;
+    line-height: 60px;
+    margin-right: 1em;
+    text-align: right;
+
+    span {
+      /* Hide the text. */
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  #cheque-id {
+    font-family: Iceland, monospace;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    line-height: 2em;
+  }
+  
+  .underlined {
+    border-bottom: 1px solid #222;
+  }
+
+  #cheque-value {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 1.5em;
+    line-height: 1.75em;
+  }
+
+  #cheque-value-words {
+    p {
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
   }
 }
 

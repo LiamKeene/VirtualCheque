@@ -8,25 +8,22 @@
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:300|Iceland' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="container">
-  <header class="navbar navbar-fixed-top">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <ul class="nav">
-          <li><%= link_to 'Home', '/' %></li>
-          <li><%= link_to 'Cheques', cheques_path %></li>
-        </ul>
-        <div class="pull-right">
-          <%= link_to 'LiamBank', '/', class: 'brand' %>
-          <%= image_tag 'LiamBank.png', alt: 'リアム銀行', id: 'logo' %>
-        </div>
-      </div>
+<body>
+  <header class="cf">
+    <nav>
+      <%= link_to 'Cheques', cheques_path %>
+      <%= link_to 'New', new_cheque_path %>
+    </nav>
+    <div id="branding">
+      <%= link_to 'LiamBank', root_url, class: 'brand' %>
+      <%= image_tag 'LiamBank.png', alt: 'リアム銀行' %>
     </div>
   </header>
-  <section id="main" class="container">
+  <div id="content">
     <%= yield %>
-  </section>
+  </div>
 </body>
 </html>
