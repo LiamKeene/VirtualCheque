@@ -115,3 +115,17 @@ tfoot {
 .cf:after {
   clear: both;
 }
+
+@media screen and (min-width: 37.5625em) {
+  #content {
+    width: 36.75em;
+  }
+  
+  #about {
+    display: none;
+  }
+
+  #about-large {
+    display: block;
+  }
+}
